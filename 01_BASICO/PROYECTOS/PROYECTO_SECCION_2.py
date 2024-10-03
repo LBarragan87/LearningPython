@@ -14,4 +14,4 @@ nombre = input("Indica tu nombre: ")
 ventas = input("Indique monto de Ventas alcanzadas en el mes: ")
 comision = float(ventas) * 0.13
 
-print (f"Hola {nombre}, este mes ganaste ${comision:,.2f}")
+print (f"Hola {nombre}, este mes ganaste $ {comision:,.2f}")
