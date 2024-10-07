@@ -7,5 +7,7 @@ Crea un Generador de nombre para tu cerveza
 - Programa debe responder con mensaje que concatene los datos ingresados:
 
 '''
+import os
 
+os.system("cls")
 print(f"El nombre de tu cerveza es: {input("Que ciudad te gustaria visitar?: ")} {input("Cual es tu color favorito?: ")}")

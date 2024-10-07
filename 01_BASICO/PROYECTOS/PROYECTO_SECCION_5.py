@@ -21,6 +21,7 @@ adicional se detecta si se intenta ingresar mas de 1 letra
 se indica la cantidad de intentos para ganar el juego
 '''
 from random import choice
+import os
 
 def palabra_juego(palabra_secreta):
     largo_palabra=len(palabra_secreta)
@@ -61,6 +62,7 @@ def checar_letra(letra,palabra_secreta,vidas_actual):
     return vidas_actual
 
 def palabra_desbloqueada(letra,palabra_secreta,status_palabra,letras_faltantes):
+
     actualizacion_status=status_palabra
     x=0
     for letra_secreta in palabra_secreta:
@@ -76,30 +78,35 @@ def palabra_desbloqueada(letra,palabra_secreta,status_palabra,letras_faltantes):
     return(actualizacion_status,letras_faltantes)
     
 def ahorcado():
+    os.system("cls")
     vidas=6
     lista_palabras=["hola","mundo","jugar","python","avengers","anime","musica"]
     palabra_secreta=choice(lista_palabras).upper()
     #print(palabra_secreta)
     letras_pendientes=len(palabra_secreta)
     jugador=input("ingresa tu nombre: ")
+    os.system("cls")
     print(f"bienvenido {jugador}, intenta descubril la palabra secreta:")
     print(palabra_juego(palabra_secreta))
     lista_letras=[]
     status_palabra=palabra_juego(palabra_secreta)
     while vidas > 0:
+
         solicita_letra=pide_letra()
         status_letra=validar_letra(solicita_letra,lista_letras)
         while status_letra==True:
+            
             solicita_letra=pide_letra()
             status_letra=validar_letra(solicita_letra,lista_letras)
         else: 
+            os.system("cls")
             resultado_vidas=checar_letra(solicita_letra,palabra_secreta,vidas)
             vidas=resultado_vidas
             status_juego=palabra_desbloqueada(solicita_letra,palabra_secreta,status_palabra,letras_pendientes)
             status_palabra=status_juego[0]
             letras_pendientes=status_juego[1]
             if letras_pendientes == 0:
-                print(f"FELIZIDADES!, DESCIFRASTE LA PALABRA SECRETA '{palabra_secreta}' CON {len(lista_letras)} INTENTOS")
+                print(f"FELIZIDADES {jugador.upper()}!, DESCIFRASTE LA PALABRA SECRETA '{palabra_secreta}' USANDO {len(lista_letras)} LETRAS")
                 break
     else:
         print("haz perdido!, ya no tienes vidas!")

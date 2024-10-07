@@ -9,9 +9,11 @@ calculo de comiciones de vendedores 13%
     * Monto correspondiente a las ventas
 
 '''
+import os
 
+os.system("cls")
 nombre = input("Indica tu nombre: ")
 ventas = input("Indique monto de Ventas alcanzadas en el mes: ")
 comision = float(ventas) * 0.13
-
+os.system("cls")
 print (f"Hola {nombre}, este mes ganaste $ {comision:,.2f}")

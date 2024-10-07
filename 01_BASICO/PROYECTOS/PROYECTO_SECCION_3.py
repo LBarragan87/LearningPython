@@ -11,6 +11,10 @@ devolver a usuario:
 -aparece palabra "python"?
 '''
 
+import os
+
+os.system("cls")
+
 texto = input("ingrese un texto: ")
 texto_mayusculas = texto.upper()
 cantidad_letras_usuario=3
@@ -23,6 +27,7 @@ while x <= cantidad_letras_usuario:
     x+=1
 
 print (f"ingresaste el texto: '{texto}'")
+os.system("cls")
 print ("---respuestas---")
 print ("---respuesta 1---")
 y=1

@@ -10,7 +10,9 @@ imprimir:
 -con cada intento indicar si el numero dado es mayo o menor al numero pensado
 -avisar que encontro el numero secreto, y cuantos intentos ha gastado
 '''
+import os
 
+os.system("cls")
 from random import randint
 
 numero_menor=1
@@ -21,7 +23,8 @@ usuario=input("ingresa tu nombre: ")
 vidas_inicial=8
 total_intentos=0
 lista_intentos=[]
-print(f"hola {usuario}, intenta adivinar el numero secreto, tienes 8 intentos")
+os.system("cls")
+print(f"hola {usuario}, intenta adivinar el numero secreto (entre {numero_menor} y {numero_mayor}), tienes 8 intentos")
 while vidas_inicial>0:
     valor_intento=int(input("ingresa un numero: "))
     if valor_intento in lista_intentos:
@@ -42,7 +45,9 @@ while vidas_inicial>0:
                 total_intentos+=1
             elif valor_intento==numero_secreto:
                 total_intentos+=1
+                os.system("cls")
                 print(f"felicidades {usuario}, el numero secreto era '{valor_intento}', y lo descubriste en {total_intentos} intentos")
                 break
 else:
+    os.system("cls")
     print(f"{usuario} no descubriste el numero secreto '{numero_secreto}', y te quedaste sin intentos")
