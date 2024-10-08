@@ -107,25 +107,7 @@ def interfaz_banco():
                         seleccion = "A"
                     else:
                         seleccion = "D"        
-                
-                
-                
-                
-            
-            
-    """  
-          while
-            respuesta=input(f"desea regresar al menu anterior (S/N)?: ")
-            if respuesta == "S":
-                interfaz_banco()
-            elif respuesta == "N":
-                break
-            else:
-                print() 
-            """
-  
 
-    
 #cliente_actual=crear_cliente()
 cliente_actual=Cliente("Luis","Barragan","123123",0)
 
