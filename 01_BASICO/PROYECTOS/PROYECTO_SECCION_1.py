@@ -9,5 +9,22 @@ Crea un Generador de nombre para tu cerveza
 '''
 import os
 
-os.system("cls")
-print(f"El nombre de tu cerveza es: {input("Que ciudad te gustaria visitar?: ")} {input("Cual es tu color favorito?: ")}")
+
+def gen_nombre_cerveza(ciudad, color):
+    '''
+    mensaje que genera nombre de cerveza
+    '''
+    print((f"El nombre de tu cerveza es:{ciudad} {color}"))
+
+
+def generador_nombre_cerveza():
+    '''
+    modulo que genera nombre de cerveza
+    '''
+    os.system("cls")
+    get_ciudad = input("Que ciudad te gustaria visitar?: ")
+    get_color = input("Cual es tu color favorito?: ")
+    gen_nombre_cerveza(get_ciudad, get_color)
+
+
+generador_nombre_cerveza()
