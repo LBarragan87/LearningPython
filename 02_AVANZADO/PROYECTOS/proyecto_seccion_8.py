@@ -14,6 +14,8 @@ import os
 
 
 def select_funcion(seleccion):
+    '''impresion de turnos'''
+    print("*"*25)
     print("Su Turno es: ")
     if seleccion == "F":
         print(f"F - {next(f)}")
@@ -22,9 +24,11 @@ def select_funcion(seleccion):
     elif seleccion == "P":
         print(f"P - {next(p)}")
     print("Espere y sera atendido")
+    print("*"*25)
 
 
 def gen_turno_farmacia():
+    '''generador de turnos a farmacia'''
     x = 0
     while True:
         x += 1
@@ -32,6 +36,7 @@ def gen_turno_farmacia():
 
 
 def gen_turno_cosmetica():
+    '''generador de turnos a cosmetica'''
     x = 0
     while True:
         x += 1
@@ -39,6 +44,7 @@ def gen_turno_cosmetica():
 
 
 def gen_turno_perfumeria():
+    '''generador de turnos a perfumeria'''
     x = 0
     while True:
         x += 1
@@ -46,6 +52,7 @@ def gen_turno_perfumeria():
 
 
 def opciones():
+    '''genera opciones de turnero'''
     teclas_deseadas = ["F", "C", "P"]
     print("Bienvenido, a que area desea pasar:"
           "\nF) farmacia \nC) cosmetica\nP) perfumeria")
@@ -57,18 +64,15 @@ def opciones():
     return select_area
 
 
-def siguiente():
-    os.system("cls")
-
-
 def turnero():
+    '''aplicacion principal de turnero'''
+    print("Bienvenido a Farmacias 'Lugan'")
     turnero_encendido = True
     while turnero_encendido:
         select_area = opciones()
         select_funcion(select_area)
-        turnero_encendido = input("Presione cualquier letra para generar"
-                                  "nuevo turno:")
-        if turnero_encendido == "Apagar":
+        siguiente_apagar = (input("Regresar a menú anterior:")).upper()
+        if siguiente_apagar == "APAGAR":
             turnero_encendido = False
         os.system("cls")
 
